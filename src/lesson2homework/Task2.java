@@ -18,16 +18,16 @@ package lesson2homework;
 //        }
 //    }
 
-public class Task2 {
-    public static void main (String [] args) {
-        int mon;
-        mon = 6;
-        if((mon==1)||(mon==2)||(mon==12)) {
-            System.out.println("Winter");
-        }else if((mon=>3)&&(mon<=5)) {
-            System.out.println("Spring");
-        }else if((mon=>6)&&(mon<=9)) {
-            System.out.println("Summer");
-        }else System.out.println("Autumn");
-    }
-}
+//public class Task2 {
+//    public static void main (String [] args) {
+//        int mon;
+//        mon = 6;
+//        if((mon==1)||(mon==2)||(mon==12)) {
+//            System.out.println("Winter");
+//        }else if((mon=>3)&&(mon<=5)) {
+//            System.out.println("Spring");
+//        }else if((mon=>6)&&(mon<=9)) {
+//            System.out.println("Summer");
+//        }else System.out.println("Autumn");
+//    }
+//}
