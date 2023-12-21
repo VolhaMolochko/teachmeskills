@@ -5,7 +5,6 @@ package lesson2homework;
 public class Task6 {
     public static void main(String[] args) {
         int nech;
-        nech = 1;
         for (int i = 0; i <= 99; i++) {
             if (i % 2 != 0) {
                 nech = i;
