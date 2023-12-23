@@ -11,12 +11,14 @@ public class Task8 {
         int chis = scanner.nextInt();
         int sum;
         sum = 0;
-        for (int i = 1; i <= chis; i++) {
-            if (chis > 0) {
+        if (chis > 0) {
+            for (int i = 1; i <= chis; i++) {
                 sum = sum + i;
                 System.out.println(sum);
             }
-
+        } else{
+                System.out.println("Считаем сумму только положительных чисел");
+            }
         }
     }
-}
+
