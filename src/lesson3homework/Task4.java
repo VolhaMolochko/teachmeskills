@@ -8,8 +8,8 @@ import java.util.Arrays;
 //для какого из массивов это значение оказалось больше либо они равны.
 public class Task4 {
     public static void main(String[] args) {
-        int[] zorka = {12, 8, 5, 13, 42};
-        int[] spadaroznik = {12, 8, 5, 13, 42};
+        int[] zorka = {10, 8, 5, 13, 42};
+        int[] spadaroznik = {10, 8, 5, 13, 42};
         System.out.println(Arrays.toString(zorka));
         System.out.println(Arrays.toString(spadaroznik));
         double sum1 = 0;
@@ -17,14 +17,14 @@ public class Task4 {
         double sred1;
         double sred2;
 
-        for (int i = 0; i < zorka.length; i++) {
-            sum1 = sum1 + zorka[i];
+        for (int i : zorka) {
+            sum1 = sum1 + i;
         }
         sred1 = sum1 / 5;
         System.out.println(sred1);
 
-        for (int i = 0; i < spadaroznik.length; i++) {
-            sum2 = sum2 + spadaroznik[i];
+        for (int i : spadaroznik) {
+            sum2 = sum2 + i;
         }
         sred2 = sum2 / 5;
         System.out.println(sred2);
