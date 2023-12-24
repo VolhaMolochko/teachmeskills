@@ -1,7 +1,6 @@
 package lesson3homework;
 
 import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
 
 //Создайте и заполните массив случайными числами и выведите min и max и среднее значение.
