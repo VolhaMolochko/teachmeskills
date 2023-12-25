@@ -12,24 +12,37 @@ import java.util.Scanner;
 public class Task5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите количество элементов массива");
-        int n = scanner.nextInt();
-        int m;
-
         Random random = new Random();
-        if (((n <= 5) || (n > 10))) {
-            while ((n <= 5) || (n > 10)) {
-                System.out.println("Веденное число не подохдит");
-                System.out.println("Введите количество элементов массива еще раз");
-                m = scanner.nextInt();
-                n = m;
+        int n;
+        do {
+            System.out.println("Введите количество элементов массива");
+            n = scanner.nextInt();
+        }
+        while ((n <= 5) || (n > 10));
+        int[] massiv = new int[n];
+        int[] massiv2 = new int[n];
+        for (int i = 0; i < massiv.length; i++) {
+            massiv[i] = random.nextInt(100);
+        }
+        System.out.println(Arrays.toString(massiv));
+
+        int chetn = 0;
+        for (int i : massiv) {
+            if (i % 2 == 0) {
+                chetn++;
             }
+        }
+        if (chetn == 0) {
+            System.out.println("В массиве нет четных элементов");
         } else {
-            int[] massiv = new int[n];
-            for (int i = 0; i <= massiv.length; i++) {
-                massiv[i] = random.nextInt();
+            int l = 0;
+            for (int i = 0; i < massiv.length; i++) {
+                if (massiv[i] % 2 == 0) {
+                    massiv2[l] = massiv[i];
+                    l++;
+                }
             }
-            System.out.println(Arrays.toString(massiv));
+            System.out.println(Arrays.toString(massiv2));
         }
     }
 }
