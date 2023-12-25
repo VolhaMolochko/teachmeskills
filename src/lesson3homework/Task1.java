@@ -9,8 +9,7 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in); //задаем переменную сканер, значение которой будем выводить с клавиатуры
         System.out.println("Введите число");
-        int a;
-        a = 0;
+        int a=0;
         int chislo = scanner.nextInt(); //это уже само значение которое потом можно будет использовать
         int[] massiv = {2, 12, 46, 10, 35, 7};
         for (int i = 0; i < massiv.length; i++) {
