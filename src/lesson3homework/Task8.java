@@ -9,7 +9,7 @@ public class Task8 {
         int[] zorka = {12, 7, 4, 42, 13, 8, 2};
         int buf;
         boolean otsortirovan = false;
-        while (!otsortirovan) {
+        while (!otsortirovan) {    //флаг для того, чтобы понять когда перестать выполнять цикл
             otsortirovan = true;
             for (int i = 0; i < zorka.length - 1; i++) {
                 if (zorka[i] > zorka[i + 1]) {

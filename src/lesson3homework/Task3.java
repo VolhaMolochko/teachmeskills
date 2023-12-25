@@ -24,9 +24,9 @@ public class Task3 {
         int min = massiv[0];
         int max = massiv[0];
 
-        for (int i = 1; i < massiv.length; i++) {
-            if (massiv[i] < min) {
-                min = massiv[i];
+        for (int i : massiv) {
+            if (i < min) {
+                min = i;
             }
             if (massiv[i] > max) {
                 max = massiv[i];
