@@ -16,7 +16,7 @@ public class Task3 {
         double  sum = 0;
         double srednee;
         for (int i = 0; i < massiv.length; i++) {
-            massiv[i] = (int) (Math.random() * 6); // в скобочках умножение на 6, потому что math.random генерит числа от 0 до <1
+            massiv[i] = (int) (Math.random() * (massiv.length-1)); // в скобочках умножение на 6, потому что math.random генерит числа от 0 до <1
             sum += massiv[i];
         }
         System.out.println(Arrays.toString(massiv));
