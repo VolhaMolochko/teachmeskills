@@ -13,21 +13,21 @@ public class Task2 {
         System.out.println("Введите число, которое будем менять");
         int chis = scanner.nextInt();
         int zer = 0;
-
-        for (int i = 0; i < massiv.length; i++) {
-            if (massiv[i] == chis) {
+        for (int i : massiv) {
+            if (i == chis) {
                 zer++;
             }
         }
-
         if (zer == 0) {
             System.out.println("Нету такого числа в массиве");
-        }
-        if (zer != 0) {
+        } else {
             for (int i = 0; i < massiv.length; i++) {
-                massiv[i] = massiv[i] - 1;
+                if (massiv[i] == chis) {
+                    massiv[i] = -1;
+                }
             }
             System.out.println(Arrays.toString(massiv));
         }
     }
 }
+
