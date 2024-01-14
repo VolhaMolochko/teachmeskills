@@ -11,9 +11,9 @@ public class HDD {
     }
 
     public HDD(String name, int amount, String type) {
-        this.name = String.valueOf(name);
+        this.name = name;
         this.amount = amount;
-        this.type = String.valueOf(type);
+        this.type = type;
     }
 
     public String hddInfo() {

@@ -17,36 +17,42 @@ public class ATM {
         amount100 += addAmount100;
         return (amount20 + " " + amount50 + " " + amount100);
     }
+
     boolean debitSucsess(int outSumm) {
         int count20 = 0;
         int count50 = 0;
         int count100 = 0;
-        while (outSumm >= 100 && count100 <= amount100) {
-            count100++;
-            outSumm -= 100;
+        if (outSumm <= (amount100 * 100 + amount50 * 50 + amount20 * 20)) {
+            if (amount100 > 0) {
+                while (outSumm >= 100 && count100 <= amount100) {
+                    count100++;
+                    outSumm -= 100;
+                    amount100 -= 1;
+                }
+            }
+            if (amount50 > 0) {
+                while (outSumm >= 50 && count50 <= amount50) {
+                    count50++;
+                    outSumm -= 50;
+                    amount50 -= 1;
+                }
+            }
+            if (amount20 > 0) {
+                while (outSumm >= 20 && count20 <= amount20) {
+                    count20++;
+                    outSumm -= 20;
+                    amount20 -= 1;
+                }
+            }
         }
-        while (outSumm >= 50 && count50 <= amount50) {
-            count50++;
-            outSumm -= 50;
-        }
-        while (outSumm >= 20 && count20 <= amount20) {
-            count20++;
-            outSumm -= 20;
-        }
+
         if (outSumm == 0) {
-            System.out.print("100 x " + count100 + " 50 x " + count50 + " 20 x " + count20);
-            amount100 -= count100;
-            amount50 -= count50;
-            amount20 -= count20;
+            System.out.println("100 x " + count100 + " 50 x " + count50 + " 20 x " + count20);     //сколько купюр выдали
+            System.out.println("100 x " + amount100 + " 50 x " + amount50 + " 20 x " + amount20); //сколько осталось купюр в банкомате
             return true;
         } else {
             System.out.print("fail");
             return false;
         }
-    }
-
-    public String atmInfo() {
-        return (amount20 + " " + amount50 + " " + amount100);   //метод вывода информации
-
     }
 }
