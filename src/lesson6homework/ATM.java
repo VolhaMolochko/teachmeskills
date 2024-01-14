@@ -17,7 +17,6 @@ public class ATM {
         amount100 += addAmount100;
         return (amount20 + " " + amount50 + " " + amount100);
     }
-
     boolean debitSucsess(int outSumm) {
         int count20 = 0;
         int count50 = 0;
@@ -36,10 +35,18 @@ public class ATM {
         }
         if (outSumm == 0) {
             System.out.print("100 x " + count100 + " 50 x " + count50 + " 20 x " + count20);
+            amount100 -= count100;
+            amount50 -= count50;
+            amount20 -= count20;
             return true;
         } else {
             System.out.print("fail");
             return false;
         }
+    }
+
+    public String atmInfo() {
+        return (amount20 + " " + amount50 + " " + amount100);   //метод вывода информации
+
     }
 }
