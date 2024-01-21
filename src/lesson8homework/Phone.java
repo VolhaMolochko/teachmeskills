@@ -4,7 +4,6 @@ public class Phone {
     private String number;
     private String model;
     private double weight;
-    private Phone phone;
 
     public Phone() {
 
