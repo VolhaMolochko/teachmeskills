@@ -10,24 +10,27 @@ import java.util.Date;
 
 public class MainPart {
     public static void main(String[] args) {
+        Register register = new Register();
         try {
-            Register register = new Register();
             ContractForDelivery contractForDelivery = new ContractForDelivery("555abc1a2b", "box", 46, new Date());
-            EmployeeContract employeeContract = new EmployeeContract("555abc1a2b", new Date(), new Date(), new Date(), "Egor");
-            FinancialInvoice financialInvoice = new FinancialInvoice(457, new Date(), "555abc1a2b", "K-19");
-
             register.addDoc(contractForDelivery);
-            register.addDoc(employeeContract);
-            register.addDoc(financialInvoice);
-
-            for (int i = 0; i < register.count; i++) {
-                register.docInfo(register.documents[i]);
-            }
-
         } catch (DocumentsNumberException e) {
-            System.out.println("Can't create document: " + e.getMessage());
-
+            System.out.println("Can't create document 1: " + e.getMessage());
         }
-
+        try {
+            EmployeeContract employeeContract = new EmployeeContract("ауук", new Date(), new Date(), new Date(), "Egor");
+            register.addDoc(employeeContract);
+        } catch (DocumentsNumberException e) {
+            System.out.println("Can't create document 2: " + e.getMessage());
+        }
+        try {
+            FinancialInvoice financialInvoice = new FinancialInvoice(457, new Date(), "555-abc-1a2b", "K-19");
+            register.addDoc(financialInvoice);
+        } catch (DocumentsNumberException e) {
+            System.out.println("Can't create document 3: " + e.getMessage());
+        }
+        for (int i = 0; i < register.count; i++) {
+            register.docInfo(register.documents[i]);
+        }
     }
 }
