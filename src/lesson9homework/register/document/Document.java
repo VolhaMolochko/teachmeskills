@@ -9,10 +9,12 @@ public abstract class Document {
     public Document() {
     }
 
-    public Document(String docNumber, Date docDate) {
+    public Document(String docNumber, Date docDate)  {
         this.docNumber = docNumber;
         this.docDate = docDate;
     }
 
     public abstract void docInfo();
+
+
 }
