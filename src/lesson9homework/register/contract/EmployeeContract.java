@@ -1,5 +1,6 @@
 package lesson9homework.register.contract;
 
+import lesson9homework.register.DocExeption.DocumentsNumberException;
 import lesson9homework.register.document.Document;
 
 import java.util.Date;
@@ -13,8 +14,11 @@ public class EmployeeContract extends Document {
     public EmployeeContract() {
     }
 
-    public EmployeeContract(String docNumber, Date docDate, Date docStartDate, Date docEndDate, String employeeName) {
+    public EmployeeContract(String docNumber, Date docDate, Date docStartDate, Date docEndDate, String employeeName) throws DocumentsNumberException {
         super(docNumber, docDate);
+        if (!docNumber.contains("abc") || !docNumber.startsWith("555") || !docNumber.endsWith("1a2b")) {
+            throw new DocumentsNumberException("Incorrect number format");
+        }
         this.docStartDate = docStartDate;
         this.docEndDate = docEndDate;
         this.employeeName = employeeName;
